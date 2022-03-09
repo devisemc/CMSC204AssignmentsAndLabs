@@ -114,9 +114,15 @@ public class BasicDoubleLinkedList<T> implements Iterable<T> {
 				temp = current;
 				// Removal
 				if (current.next == null) // If replacing tail
+				{
 					tail = current.prev;
+					tail.next = null;
+				}
 				else if (current.prev == null) // If replacing head
+				{
 					head = current.next;
+					head.prev = null;
+				}
 				else
 				{
 					current.next.prev = current.prev;
